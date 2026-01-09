@@ -1,0 +1,244 @@
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('img/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Overlay agar background lebih gelap */
+        .overlay {
+            background: blue(0,0,0,0.4);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .header p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .search-box {
+            width: 90%;
+            margin: 15px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box input {
+            width: 100%;
+            max-width: 450px;
+            padding: 12px 15px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+            /* Catalogue grid */
+        .catalogue {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 18px;
+        padding: 10px 20px;
+
+        /* agar grid berada di tengah */
+        max-width: 900px;
+        margin: 0 auto;
+        }
+
+
+        /* Product Card */
+        .card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-name {
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 14px;
+            margin-top: 3px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #3d83ff;
+            padding: 2px;
+            text-align: center;
+        }
+
+        .bottom-nav img {
+            width: 50px;
+        }
+
+        .header .logo {
+    width: 150px;        /* ukuran kecil */
+    height: 150px;       /* samakan agar benar-benar bulat */
+    border-radius: 50%; /* membuat gambar bulat */
+    object-fit: cover;  /* agar gambar tidak gepeng */
+}
+
+.bottom-space {
+    height: 200px; /* atur sesuai tinggi footer */
+}
+
+
+@media (max-width: 480px) {
+    .catalogue {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 6px;
+    }
+
+    .product-name {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 11px;
+    }
+}
+
+/* Efek glow saat hover */
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Layer glow */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 14px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 0, 150, 0.6),
+        rgba(0, 200, 255, 0.6),
+        rgba(0, 255, 150, 0.6)
+    );
+    opacity: 0;
+    filter: blur(12px);
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.6);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+
+.detail-container {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+}
+
+.detail-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 12px;
+}
+
+.detail-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.detail-info h3 {
+    color: #4cffb0;
+    margin-top: 10px;
+}
+
+.detail-info p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.rent-btn {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(135deg, #3d83ff, #6bc1ff);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .detail-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;   /* rasio potret, bisa 1/1 atau 4/5 */
+    object-fit: cover;     /* potong otomatis tanpa gepeng */
+    border-radius: 10px;
+    display: block;
+}
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #1e88e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
