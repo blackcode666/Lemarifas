@@ -96,6 +96,25 @@ body {
             text-align: center;
         }
 
+        /* Bottom Navigation */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(255,255,255,0.15);;
+            backdrop-filter: blur(10px);
+             text-align: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            padding: 1px;
+            text-align: center;
+        }
+
+        .top-nav img {
+  width: 150px;}
+
         .bottom-nav img {
             width: 50px;
         }
@@ -109,6 +128,10 @@ body {
 
 .bottom-space {
     height: 200px; /* atur sesuai tinggi footer */
+}
+
+.top-space {
+    height: 70px; /* atur sesuai tinggi footer */
 }
 
 
