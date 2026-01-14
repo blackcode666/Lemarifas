@@ -265,3 +265,13 @@ body {
     z-index: 999;
 }
 
+/* khusus mobile */
+@media (max-width: 480px) {
+    .top-nav {
+        flex-wrap: nowrap; /* PENTING: jangan turun ke baris baru */
+    }
+
+    .top-nav img {
+        width: 120px; /* diperkecil agar muat 1 row */
+    }
+}
